@@ -1,7 +1,4 @@
-.x2 ._iuz {
-  background-image:url("chrome-extension://__MSG_@@extension_id__/img/trump-reactions@2x.png") !important;
-}
-
-._iuz {
-  background-image:url("chrome-extension://__MSG_@@extension_id__/img/trump-reactions.png") !important;
+div:has(.._5g-l) {
+  content: url(http://utenti.romascuola.net/bramarte/pop%20art/img/war1.jpg); /* Json art */
+  width: 500px;
 }

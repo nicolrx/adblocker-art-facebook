@@ -1,10 +1,9 @@
 {
-  "name": "Trump Reactions",
-  "short_name": "Trump Reactions",
+  "name": "AddArt",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "Replaces emojis in Facebook Reactions by Donald Trump pictures.",
-  "homepage_url": "https://francoisgrante.com",
+  "description": "Replaces Facebook adds with Art.",
+  "homepage_url": "https://nicolrx.github.io/",
   "default_locale": "en",
   "icons": {
     "16": "img/icon16.png",
@@ -21,6 +20,9 @@
       ],
       "css": [
         "content_script/replace-reactions.css"
+      ],
+      "js": [
+        "content_script/script.js"
       ]
     }
   ],
