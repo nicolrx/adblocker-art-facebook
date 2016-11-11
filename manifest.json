@@ -2,13 +2,16 @@
   "name": "AddArt",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "Replaces Facebook adds with Art.",
+  "description": "Replaces Facebook ads with Art.",
   "homepage_url": "https://nicolrx.github.io/",
   "default_locale": "en",
   "icons": {
-    "16": "img/icon16.png",
-    "48": "img/icon48.png",
-    "128": "img/icon128.png"
+    "16": "img/logo.png",
+    "48": "img/logo.png",
+    "128": "img/logo.png"
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
   },
   "permissions": [
     "*://*.facebook.com/*"
