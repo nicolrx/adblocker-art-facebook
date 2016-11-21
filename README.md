@@ -1,4 +1,4 @@
-# Add.Art
-Replaces Facebook Ads with Art.
+# FeedArt
+Feedart is a chrome extension which replaces the ads you see on your Facebook feed by cool pieces of art. We feature a different artist or style every week.
 
-<!-- ![Trump Reactions screenshot](https://s3-eu-west-1.amazonaws.com/fgrante/trump_reaction_screenshot.png) -->
+[Feedart](https://lh3.googleusercontent.com/fghPXRQaK1GCU0IbgXPhPn2O4MaU1JfkT9TGWbtPN1dXh6MsAWnLbWj870zlylBoVW6LnqBxnxE=s1280-h800-e365-rw)
