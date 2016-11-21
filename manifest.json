@@ -1,6 +1,6 @@
 {
-  "name": "AddArt",
-  "version": "0.0.3",
+  "name": "FeedArt",
+  "version": "0.0.6",
   "manifest_version": 2,
   "description": "Replaces Facebook ads with Art.",
   "homepage_url": "https://nicolrx.github.io/",
@@ -14,7 +14,8 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "*://*.facebook.com/*"
+    "*://*.facebook.com/*",
+    "http://www.feedart.co"
   ],
   "content_scripts": [
     {
