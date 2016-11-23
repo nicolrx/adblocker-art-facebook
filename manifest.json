@@ -15,7 +15,7 @@
   },
   "permissions": [
     "*://*.facebook.com/*",
-    "http://www.feedart.co", // this line generates errors, useless isn't it?
+    "http://www.feedart.co", 
     "https://raw.githubusercontent.com/*/adblocker-art-facebook/master/current-art.json"
   ],
   "content_scripts": [
