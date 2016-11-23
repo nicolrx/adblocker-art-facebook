@@ -1,30 +1,26 @@
-var img = ["http://cdn.shopify.com/s/files/1/0895/2844/products/lenin_grande.jpg?v=1434721597",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/mlk_grande.jpg?v=1434889207",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/Trump_-_HIPSTORY_-_Amit_Shimoni_grande.jpg?v=1459857088",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/obama_grande.jpg?v=1434877005",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/churchill_grande.jpg?v=1434716339",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/lama_grande.jpg?v=1434719155",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/mandella_grande.jpg?v=1434719438",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/reagan_grande.jpg?v=1434889117",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/Beatrix_grande.jpg?v=1438097636",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/gandhi_grande.jpg?v=1434397464",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/putin_grande.jpg?v=1468418630",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/de_gaulle_grande.jpg?v=1436789874",
-"http://freeyork.org/wp-content/uploads/2015/01/hipstory10.jpg",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/che_grande.jpg?v=1434721315",
-"http://www.mouv.fr/sites/default/files/2014/12/15/182544/mao__700.jpg",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/washington_grande.jpg?v=1434877070",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/lincoln_grande.jpg?v=1455202340",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/hillary_grande.jpg?v=1434721556",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/kennedy_grande.jpg?v=1434719011",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/abby_tlv2_grande.jpg?v=1449582934",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/hipstory_santa_grande.jpg?v=1448476196",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/golda_grande.jpg?v=1434902839",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/margaret_thatcher_grande.jpg?v=1434721473",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/queen_elizabeth_grande.jpg?v=1434719302",
-"http://cdn.shopify.com/s/files/1/0895/2844/products/angela_merkel_grande.jpg?v=1455203097"];
+// Init XHR Object and retrieve list from a github repo
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://raw.githubusercontent.com/askz/adblocker-art-facebook/master/current-art.json", true);
+xhr.onreadystatechange = function() {
+  if (xhr.readyState == 4) {
+    // JSON.parse does not evaluate the attacker's scripts.
+    var resp = JSON.parse(xhr.responseText);
+    console.log(resp);
+    // call function
+    addArt(resp);
+    window.onload = function () {
+      window.onscroll = function () {
+        if (document.body.scrollTop > 30) {
+          addArt(resp);
+        }
+      };
+    };
+  }
+};
+xhr.send();
 
-var count_img = img.length;
+// https://raw.githubusercontent.com/askz/adblocker-art-facebook/master/current-art.json
+
 
 /**
  * Returns a random integer between min (inclusive) and max (inclusive)
@@ -35,7 +31,8 @@ function getRandomInt(min, max) {
 }
 
 // Feed Ad
-function addArt() {
+function addArt(img) {
+  var count_img = img.length;
   var count = document.getElementsByClassName("uiStreamSponsoredLink").length;
   for (i = 0; i < count; i++) {
     var x = document.getElementsByClassName("uiStreamSponsoredLink")[i].parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
@@ -68,12 +65,3 @@ function addArt() {
     }
 };
 
-// call function
-addArt();
-window.onload = function () {
-  window.onscroll = function () {
-    if (document.body.scrollTop > 30) {
-      addArt();
-    }
-  };
-};
