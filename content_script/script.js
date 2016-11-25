@@ -1,6 +1,6 @@
 // Init XHR Object and retrieve list from a github repo
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://raw.githubusercontent.com/askz/adblocker-art-facebook/master/current-art.json", true);
+xhr.open("GET", "https://raw.githubusercontent.com/nicolrx/adblocker-art-facebook/master/current-art.json", true);
 xhr.onreadystatechange = function() {
   if (xhr.readyState == 4) {
     // JSON.parse does not evaluate the attacker's scripts.
