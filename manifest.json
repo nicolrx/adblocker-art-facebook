@@ -1,6 +1,10 @@
 {
   "name": "FeedArt",
+<<<<<<< HEAD
   "version": "0.0.8",
+=======
+  "version": "0.0.6",
+>>>>>>> origin/master
   "manifest_version": 2,
   "description": "Replaces Facebook ads with Art.",
   "homepage_url": "http://www.feedart.co",
@@ -14,7 +18,9 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "*://*.facebook.com/*"
+    "*://*.facebook.com/*",
+    "http://www.feedart.co", 
+    "https://raw.githubusercontent.com/*/adblocker-art-facebook/master/current-art.json"
   ],
   "content_scripts": [
     {

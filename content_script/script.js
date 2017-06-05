@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var img = ["http://sachagoldberger.com/portfolio/wp-content/gallery/flemish-in-the-stars/21_07_13_Super-H%C3%A9ros-Flamands-_21_darkvador_1293_05.jpg",
 "http://static1.gamerstuff.fr/wp-content/uploads/2014/11/sacha-goldberger-super-heros-flamands-cat-woman.jpg",
 "http://actuphoto.com/files/news_34875_0.jpg",
@@ -19,8 +20,31 @@ var img = ["http://sachagoldberger.com/portfolio/wp-content/gallery/flemish-in-t
 "http://sachagoldberger.com/portfolio/wp-content/gallery/super-flemish/15_07_13_Super-H%C3%A9ros-Flamands-_14_Wonderwoman_0709_5.jpg",
 "http://www.wipplay.com//anonymiser/312087-newvis.jpg",
 "http://1.bp.blogspot.com/-OOBF7rXRooU/VHI8FMvTBnI/AAAAAAAAAbc/_X1hqNp1cCE/s1600/SuperHerosFlamands_Leia_Sacha.jpg"];
+=======
+// Init XHR Object and retrieve list from a github repo
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://raw.githubusercontent.com/nicolrx/adblocker-art-facebook/master/current-art.json", true);
+xhr.onreadystatechange = function() {
+  if (xhr.readyState == 4) {
+    // JSON.parse does not evaluate the attacker's scripts.
+    var resp = JSON.parse(xhr.responseText);
+    console.log(resp);
+    // call function
+    addArt(resp);
+    window.onload = function () {
+      window.onscroll = function () {
+        if (document.body.scrollTop > 30) {
+          addArt(resp);
+        }
+      };
+    };
+  }
+};
+xhr.send();
 
-var count_img = img.length;
+// https://raw.githubusercontent.com/askz/adblocker-art-facebook/master/current-art.json
+>>>>>>> origin/master
+
 
 /**
  * Returns a random integer between min (inclusive) and max (inclusive)
@@ -31,7 +55,8 @@ function getRandomInt(min, max) {
 }
 
 // Feed Ad
-function addArt() {
+function addArt(img) {
+  var count_img = img.length;
   var count = document.getElementsByClassName("uiStreamSponsoredLink").length;
   for (i = 0; i < count; i++) {
     var x = document.getElementsByClassName("uiStreamSponsoredLink")[i].parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
@@ -64,12 +89,3 @@ function addArt() {
     }
 };
 
-// call function
-addArt();
-window.onload = function () {
-  window.onscroll = function () {
-    if (document.body.scrollTop > 30) {
-      addArt();
-    }
-  };
-};
